@@ -1,0 +1,36 @@
+.accordion-container{
+    background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  color: #fff;
+  margin: 0 0 8px 0;
+  padding: 18px 26px;
+  .accordion-item{
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 21px;
+    color: #fff;
+    .accordion-button {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: 0.8px;
+        box-shadow: none;
+        opacity: 0.3;
+        &:focus{
+            opacity: 1;
+        }
+    }
+
+    .accordion-collapse.collapse.show{
+        .accordion-body{
+            color: #fff;
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 0.8px;
+        }
+    }
+  }
+}
+  
