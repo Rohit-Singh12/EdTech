@@ -1,5 +1,5 @@
 import { Container, Nav } from "react-bootstrap";
-import '../assets/css/tabs-component.css';
+import '../assets/scss/tabs-component.scss';
 
 const TabsComponent = () => {
     return (

@@ -5,19 +5,27 @@
     border-radius: 50px;
     background-color: rgb(255 255 255 / 10%);
     overflow: hidden;
+
+    .nav-item {
+        width: 33.33333%;
+        .nav-link{
+            color: #fff;
+                 /* Responsive font size */
+            @media (max-width: 768px) {
+                font-size: 12px; 
+            }
+            @media (min-width: 992px) {
+                font-size: 16px;
+            }
+        }
+    }
 }
 
-.nav-pills.nav .nav-item .nav-link{
-    color: #fff;
-}
 
 .nav-link.active, .nav-link:focus{
     background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%) !important;
     outline: none;
-    border-radius: 0    ;
-}
-.nav-pills.nav .nav-item {
-    width: 33.33333%;
+    border-radius: 0;
 }
 
 .mb-5{
@@ -38,8 +46,4 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
-}
-
-.project .nav.nav-pills .nav-item {
-    width: 33.33333%;
 }

@@ -2,7 +2,7 @@ import Introduction from "./Introduction";
 import {
   BrowserRouter as Router, Route, Routes
 } from "react-router-dom";
-import DescriptionComponent from "./components/DescriptionComponent";
+import DescriptionComponent from "./pages/DescriptionComponent";
 
 function App() {
   return (
