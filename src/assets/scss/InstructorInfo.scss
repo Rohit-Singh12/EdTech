@@ -1,0 +1,98 @@
+.instructor-card{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background: #151515;
+    border-radius: 64px;
+    text-align: center;
+    padding: 60px 50px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 0 2px #AA367C;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    &:hover {
+        transform: translateY(-5px); /* Lift card slightly on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), /* Adjusted shadow on hover */
+                    0 0 0 4px #AA367C; /* Adjusted border on hover */
+      }
+    .instructor-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 1rem;
+        align-items: center;
+        .instructor-info__name{
+            font-weight: 500;
+            color: rgba(255,255,255);
+            overflow-wrap: break-word;
+
+            @media (min-width: 769px) {
+                font-size: 24px;
+                line-height: 1.33;
+                letter-spacing: 0.18px;
+            }
+
+            @media (max-width: 769px) {
+                margin-top: 15px;
+            }
+        }
+
+        .instructor-info__designation{
+            @media (min-width: 769px) {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 1.4;
+                letter-spacing: .15px;
+                color: rgba(255,255,255);
+            }
+        }
+
+        .instructor-info__bottom{
+            @media (min-width: 769px) {
+                display: flex;
+            }
+
+            .info{
+                display: flex;
+                align-items: center;
+                color: rgba(255,255,255);
+
+                @media (min-width: 769px) {
+                      font-size: 14px;
+                      line-height: 1.5;
+                      letter-spacing: .25px;
+                      padding-right: 1rem;
+                }
+
+                .icon {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .instructor-card__bottom p {
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: .15px;
+      color: rgba(255,255,255);
+    }
+  }
+  .gap-15px{
+    gap: 15px;
+}
+
+.instructor-img{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

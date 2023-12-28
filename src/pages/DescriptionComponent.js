@@ -6,11 +6,16 @@ import { Container, Row, Col } from "react-bootstrap";
 import GoogleButton from "../components/GoogleButton";
 import MLIcon from '../assets/img/ml-brain.jpg';
 import {CustomAccordionComponent} from "../components/CustomAccordionComponent";
+import InstructorInfo from "../components/InstructorInfo";
+import Carousel from "react-multi-carousel";
 const DescriptionComponent = () => {
     const [title, setTitle] = useState("Machine Learning")
     const [courseDescription, setCourseDescription] = useState("This free course on Data Structures & Algorithms in Java taught by industry excerpts helps you learn the basic concepts such as Complexity, Recursion, and the Tower of Hanoi. Best for Beginners. Start now!");
     const [courseOutline, setCourseOutline] = useState([])
-
+    const [instructorInfoList, setInstructorInfoList] = useState([])
+    /**
+     * Fill course outline
+     */
     useEffect(() => {
         setCourseOutline([
             {
@@ -26,6 +31,61 @@ const DescriptionComponent = () => {
               body: 'This is the content for Accordion Item #3.',
             }])
     },[])
+    
+    /**
+     * Fill instructor data
+     */
+    useEffect(() => {
+        setInstructorInfoList([
+            {
+                name: "Ketan Janai",
+                designation: "Sr. Software Engineer, Ex-Walmart, Ex- Paypal, IIT-BHU Alumnus",
+                lerners: "1.7L+",
+                coursesServed: "3",
+                yearsOfexp: "1",
+                bio: "A Software engineer with 9+ years of experience working in major product companies like Walmart, Paypal, Oracle, etc. He also has a passion for mentoring students and helping professionals crack their dream jobs in Software Engineering.",
+                img: ""
+            },
+            {
+                name: "Rahul Patel",
+                designation: "Sr. Software Engineer, Ex-Walmart, Ex- Paypal, IIT-BHU Alumnus",
+                lerners: "1.7L+",
+                coursesServed: "3",
+                yearsOfexp: "1",
+                bio: "A Software engineer with 9+ years of experience working in major product companies like Walmart, Paypal, Oracle, etc. He also has a passion for mentoring students and helping professionals crack their dream jobs in Software Engineering.",
+                img: ""
+            },
+            {
+                name: "Nishant Hipparagi",
+                designation: "Sr. Software Engineer, Ex-Walmart, Ex- Paypal, IIT-BHU Alumnus",
+                lerners: "1.7L+",
+                coursesServed: "3",
+                yearsOfexp: "1",
+                bio: "A Software engineer with 9+ years of experience working in major product companies like Walmart, Paypal, Oracle, etc. He also has a passion for mentoring students and helping professionals crack their dream jobs in Software Engineering.",
+                img: ""
+            }
+        ]
+        )
+    },[])
+     
+    const responsive = {
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 1,
+          slidesToSlide: 1 // optional, default to 1.
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 768 },
+          items: 1,
+          slidesToSlide: 1 // optional, default to 1.
+        },
+        mobile: {
+          breakpoint: { max: 767, min: 464 },
+          items: 1,
+          slidesToSlide: 1 // optional, default to 1.
+        }
+      };
+    
     return (
        <>
             <NavBar />
@@ -61,6 +121,28 @@ const DescriptionComponent = () => {
                     </Col>
                 </Row>
             </Container>
+            <div className="instructor__info">
+            <Carousel
+                responsive={responsive}
+                autoPlay={true}
+                swipeable={true}
+                draggable={true}
+                showDots={true}
+                infinite={true}
+                partialVisible={false}>
+        {instructorInfoList.map((instructorInfo, index) => {
+          return (
+            <div className="slider" key={index}>
+              <InstructorInfo instructorInfo={instructorInfo} />
+            </div>
+          );
+        })}
+      </Carousel>
+            </div>
+            
+            <div className="mb-4  btn-sticky">
+                <GoogleButton />
+            </div>
         </> 
     )
 }

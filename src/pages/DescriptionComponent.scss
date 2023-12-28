@@ -12,6 +12,7 @@
     color: #121212;
     margin-bottom: 80px;
     overflow: hidden;
+    
     .description-padding{
         padding: 35px 45px 35px 20px;
         justify-content: space-between;
@@ -33,3 +34,25 @@
 .gap-15px{
     gap: 15px;
 }
+
+.instructor__info{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.react-multi-carousel-track{
+    padding: 10px;
+}
+
+.react-multi-carousel-dot-list{
+    display: none;
+}
+
+.btn-sticky {
+    position: fixed;
+    bottom: 20px; /* Initially hide the button */
+    right: 20px;
+    transition: bottom 0.3s ease-in-out; /* Smooth transition for visibility */
+    z-index: 999;
+}
+  
