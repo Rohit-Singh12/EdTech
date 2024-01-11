@@ -268,7 +268,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #fff;
   font-weight: 700;
   font-size: 20px;
-  margin-top: 60px;
+  
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
@@ -304,6 +304,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill {
   padding: 0 0 50px 0;
   position: relative;
+  margin-top: 60px;
 }
 .skill-bx {
   background: #151515;
@@ -345,6 +346,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 80px 0;
   position: relative;
   background-color: black;
+  border-radius: 100px;
+  background-image: url('./assets/img/banner-bg.png');
+  margin: 20px;
+  
+  
 }
 .project h2 {
 	font-size: 45px;
@@ -623,4 +629,51 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .projectHoverSpan{
   color: #FFFFFF;
+}
+
+.btnContainer{
+  background-color: #4A2FBD;
+  display: flex;
+  border: #FFFFFF 2px;
+  width: 225px;
+  height: 50px;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.reg-card{
+  width: 100px;
+  height: 100px;
+  background-color: #FFFFFF ;
+}
+
+/* CSS for desktop view */
+.card-desktop {
+  display: block; /* Initially visible on desktop */
+}
+
+/* CSS for mobile view */
+.card-mobile {
+  display: none; /* Initially hidden on mobile */
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+  .card-desktop {
+    display: none; /* Hide on mobile */
+  }
+
+  .card-mobile {
+    display: none; /* Initially hidden on mobile */
+  }
+
+  .card-mobile.active {
+    display: block; /* Show when active on mobile */
+  }
+
+  /* Style for icon in mobile view */
+  .icon-mobile {
+    display: block; /* Display icon on mobile */
+  }
 }

@@ -60,7 +60,10 @@ export const Banner = () => {
                 {/* <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span> */}
                 </h1>
                   <p>Upskill with Propel, Land top roles in premier companies with our expert-led tech courses.</p>
+                  <div className="btnContainer">
                   <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                  </div>
+                  
               </div>}
             </TrackVisibility>
           </Col>

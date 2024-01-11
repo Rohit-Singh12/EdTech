@@ -15,8 +15,8 @@ const Introduction = () => {
         <div className="App">
           <NavBar />
           <Banner />
-          <Skills />
           <Projects />
+          <Skills />
           <Contact />
           <Footer />
         </div>

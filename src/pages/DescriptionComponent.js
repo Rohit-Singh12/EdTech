@@ -8,6 +8,7 @@ import MLIcon from '../assets/img/ml-brain.jpg';
 import {CustomAccordionComponent} from "../components/CustomAccordionComponent";
 import InstructorInfo from "../components/InstructorInfo";
 import Carousel from "react-multi-carousel";
+import RegisterCard from "../components/RegisterCard";
 const DescriptionComponent = () => {
     const [title, setTitle] = useState("Machine Learning")
     const [courseDescription, setCourseDescription] = useState("This free course on Data Structures & Algorithms in Java taught by industry excerpts helps you learn the basic concepts such as Complexity, Recursion, and the Tower of Hanoi. Best for Beginners. Start now!");
@@ -47,7 +48,7 @@ const DescriptionComponent = () => {
                 img: ""
             },
             {
-                name: "Rahul Patel",
+                name: "Rahul Patil",
                 designation: "Sr. Software Engineer, Ex-Walmart, Ex- Paypal, IIT-BHU Alumnus",
                 lerners: "1.7L+",
                 coursesServed: "3",
@@ -140,9 +141,12 @@ const DescriptionComponent = () => {
       </Carousel>
             </div>
             
-            <div className="mb-4  btn-sticky">
+            {/* <div className="mb-4  btn-sticky">
+                <RegistrationCard/>
                 <GoogleButton />
-            </div>
+            </div> */}
+
+            <RegisterCard/>
         </> 
     )
 }
