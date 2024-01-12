@@ -33,6 +33,22 @@
     bottom: 5px;
 }
 
+@media screen and (min-width:721px) {
+    .chat_card {
+        position: fixed;
+        background-color: aliceblue;
+        color: black;
+        width: 17rem;
+        height: 50vh;
+        display: flex;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        right: 0;
+        bottom: 60px;
+        padding: 1vh 1vh 1vh 0;
+        margin-right: 3vh;
+    }
+}
+
 @media screen and (max-width:720px) {
     .animate_chat_box {
         display: flex;

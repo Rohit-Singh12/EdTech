@@ -13,12 +13,14 @@ const RegisterCard = () => {
   console.log("Width: " + window.innerWidth);
 
   const chatBoxHandler =()=>{
-    setIsOpen(!isOpen);
+    if(window.innerWidth < 721){
+      setIsOpen(!isOpen);
+    }
   }
 
   return (
     <div className={styles.chat_card_main}>
-      <div  className={styles.chat_card + " " + (isOpen ? styles.animate_chat_box : "")}>
+      <div  className={styles.chat_card + " " + (isOpen && styles.animate_chat_box)}>
         <img src="holder.js/100px180" />
         <div>
           <div>div Title</div>
@@ -29,7 +31,8 @@ const RegisterCard = () => {
 
         </div>
       </div>
-      <Button  variant="primary" onClick={chatBoxHandler}>Go</Button>
+      {(window.innerWidth < 721) && <Button  variant="primary" onClick={chatBoxHandler}>Go</Button>}
+      
     </div>
   );
 };

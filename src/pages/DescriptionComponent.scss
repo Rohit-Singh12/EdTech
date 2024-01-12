@@ -55,4 +55,19 @@
     transition: bottom 0.3s ease-in-out; /* Smooth transition for visibility */
     z-index: 999;
 }
-  
+
+@media screen and (min-width:721px) {
+    .desktop-description{
+        width: 75%;
+        padding:10px;
+    }
+    
+}
+
+@media screen and (min-width:300px) and (max-width:700px){
+
+}
+
+.instructor__info{
+    
+}
