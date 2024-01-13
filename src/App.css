@@ -604,6 +604,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: transparent;
   border: 0;
   padding: 0 15px;
+  font-size: x-large;
+  line-height: 50px;
 }
 .new-email-bx button {
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
@@ -612,7 +614,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-weight: 500;
   letter-spacing: 0.5px;
   border-radius: 18px;
+  display:block;
 }
+
 .footer img {
   width: 26%;
 }
@@ -675,6 +679,47 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   /* Style for icon in mobile view */
   .icon-mobile {
     display: block; /* Display icon on mobile */
+  }
+}
+
+
+
+@media screen and (min-width:721px){
+  .new-email-bx:nth-child(2){
+    display: none;
+  }
+}
+
+.xyx{
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  padding: 20px 65px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 18px;
+  display:block;
+}
+
+.emailForm{
+  display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media screen and (max-width:768px){
+  .newsletter-bx{
+    padding: 18px 35px;
+  }
+  .newsletter-bx h3{
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .new-email-bx input{
+    font-size: medium;
+    line-height: 35px;
+  }
+  .xyx{
+    padding: 13px 65px;
   }
 }
 
