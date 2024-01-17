@@ -9,11 +9,38 @@ import { CustomAccordionComponent } from "../components/CustomAccordionComponent
 import InstructorInfo from "../components/InstructorInfo";
 import Carousel from "react-multi-carousel";
 import RegisterCard from "../components/RegisterCard";
+import DescriptionCard from '../components/DescriptionCard';
+
 const DescriptionComponent = () => {
   const [title, setTitle] = useState("Machine Learning")
   const [courseDescription, setCourseDescription] = useState("This free course on Data Structures & Algorithms in Java taught by industry excerpts helps you learn the basic concepts such as Complexity, Recursion, and the Tower of Hanoi. Best for Beginners. Start now!");
   const [courseOutline, setCourseOutline] = useState([])
   const [instructorInfoList, setInstructorInfoList] = useState([])
+
+  const [course, setCourse] = useState([])
+
+  useEffect(()=>{
+    setCourse([
+      {
+        title: "Advanced Machine Learning",
+        courseDescription: "world's best course",
+        level: "Advanced",
+        image: MLIcon
+      },
+      {
+        title: "Intermediate Machine Learning",
+        courseDescription: "world's best course",
+        level: "Intermediate",
+        image: MLIcon
+      },
+      {
+        title: "Basic Machine Learning",
+        courseDescription: "world's best course",
+        level: "Basic",
+        image: MLIcon
+      }
+    ])
+  },[])
   /**
    * Fill course outline
    */
@@ -91,29 +118,18 @@ const DescriptionComponent = () => {
     <>
       <NavBar />
       <div className="mt-100 p-4">
-        <TabsComponent />
+        <TabsComponent 
+        beginner={course.find(item=>item.level==="Basic")} 
+        intermediate={course.find(item=>item.level==="Intermediate")} 
+        advanced={course.find(item=>item.level==="Advanced")} 
+        />
         </div>
         <div className="desktop-description">
           <h1 className="course-info"> {title} </h1>
 
-        <Container>
-          <Row className="description-card justify-content-center">
-            <Col md={12} lg={4} className="p-0">
-              <img src={MLIcon} />
-            </Col>
-            <Col md={12} lg={8} className="description-padding">
-              <Row className="gap-15px justify-content-center">
-                <Col xs={12}>
-                  {courseDescription}
-                </Col>
-                <Col xs={12} style={{ justifyContent: "center", display: "flex" }}>
-                  <GoogleButton />
-                </Col>
-              </Row>
 
-            </Col>
-          </Row>
-        </Container>
+        <DescriptionCard/>
+
 
         <Container className="m-0" style={{ maxWidth: "none" }}>
           <Row className="course-outline">
