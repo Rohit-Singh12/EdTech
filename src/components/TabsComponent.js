@@ -13,6 +13,8 @@ const TabsComponent = ({beginner, intermediate, advanced}) => {
         setActiveKey(key);
     };
 
+    console.log(advanced, "aaa");
+
     return (
         <Container>
             <Row>
@@ -34,17 +36,17 @@ const TabsComponent = ({beginner, intermediate, advanced}) => {
                             <Tab.Pane eventKey="first">
                                 <p>Content for Beginner</p>
                                 {/* Add your content for the Beginner level here */}
-                                <DescriptionCard courseDescription={advanced.courseDescription}  courseIcon={advanced.courseIcon}/>
+                                <DescriptionCard courseDescription={advanced?.courseDescription}  courseIcon={advanced?.courseIcon}/>
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
                                 <p>Content for Intermediate</p>
                                 {/* Add your content for the Intermediate level here */}
-                                <DescriptionCard courseDescription={advanced.courseDescription}  courseIcon={advanced.courseIcon}/>
+                                <DescriptionCard courseDescription={advanced?.courseDescription}  courseIcon={advanced?.courseIcon}/>
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
                                 <p>Content for Advanced</p>
                                 {/* Add your content for the Advanced level here */}
-                                <DescriptionCard courseDescription={advanced.courseDescription}  courseIcon={advanced.image}/>
+                                <DescriptionCard courseDescription={advanced?.courseDescription}  courseIcon={advanced?.image}/>
                             </Tab.Pane>
                         </Tab.Content>
                     </Tab.Container>

@@ -18,7 +18,7 @@ const DescriptionComponent = () => {
   const [instructorInfoList, setInstructorInfoList] = useState([])
 
   const [course, setCourse] = useState([])
-
+  
   useEffect(()=>{
     setCourse([
       {
