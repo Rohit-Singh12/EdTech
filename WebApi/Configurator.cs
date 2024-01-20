@@ -11,5 +11,15 @@ public static class Configurator
 
         // BusinessLogic Registration
         services.AddScoped<ICourseManager, CourseManager>();
+
+        //CORS
+        services.AddCors(options =>
+        {
+            options.AddPolicy("AllowSpecificOrigin",
+                builder => builder
+                    .WithOrigins("http://localhost:3000") // Replace with your client's origin
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+        });
     }
 }

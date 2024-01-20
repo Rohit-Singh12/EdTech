@@ -3,43 +3,33 @@ import TabsComponent from "../components/TabsComponent"
 import { NavBar } from "../components/NavBar";
 import './DescriptionComponent.scss'
 import { Container, Row, Col } from "react-bootstrap";
-import GoogleButton from "../components/GoogleButton";
 import MLIcon from '../assets/img/ml-brain.jpg';
 import { CustomAccordionComponent } from "../components/CustomAccordionComponent";
 import InstructorInfo from "../components/InstructorInfo";
 import Carousel from "react-multi-carousel";
 import RegisterCard from "../components/RegisterCard";
 import DescriptionCard from '../components/DescriptionCard';
+import {useParams} from 'react-router-dom';
+import axios from "axios";
 
 const DescriptionComponent = () => {
-  const [title, setTitle] = useState("Machine Learning")
-  const [courseDescription, setCourseDescription] = useState("This free course on Data Structures & Algorithms in Java taught by industry excerpts helps you learn the basic concepts such as Complexity, Recursion, and the Tower of Hanoi. Best for Beginners. Start now!");
+  const { id } = useParams();
+  const [title, setTitle] = useState()
   const [courseOutline, setCourseOutline] = useState([])
   const [instructorInfoList, setInstructorInfoList] = useState([])
 
   const [course, setCourse] = useState([])
-  
-  useEffect(()=>{
-    setCourse([
-      {
-        title: "Advanced Machine Learning",
-        courseDescription: "world's best course",
-        level: "Advanced",
-        image: MLIcon
-      },
-      {
-        title: "Intermediate Machine Learning",
-        courseDescription: "world's best course",
-        level: "Intermediate",
-        image: MLIcon
-      },
-      {
-        title: "Basic Machine Learning",
-        courseDescription: "world's best course",
-        level: "Basic",
-        image: MLIcon
-      }
-    ])
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API_ENDPOINT}/CourseDetails/CourseDetailsList`)
+      .then(response => {
+        const details = response.data;
+        setCourse(details.map(course => ({
+          title: course.CourseName,
+          courseDescription: course.CourseBasicDescription,
+          level: course.level==='0' ? 'Basic' : (course.level ==='1' ? 'Intermediate' : 'Advanced')
+        })));
+      })
+      .catch()
   },[])
   /**
    * Fill course outline

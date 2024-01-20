@@ -1,47 +1,25 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/ml.jpg";
-import projImg2 from "../assets/img/ml2.jpg";
-import projImg3 from "../assets/img/ml3.jpg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export const Projects = () => {
-
-  const projects = [
-    {
-      title: "Artificial Intelligence",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-  ];
-
+  const PREVIEW_URL = `${process.env.REACT_APP_API_ENDPOINT}/CourseDetails/CoursePreviews`;
+  const [projects, setProjects] = useState([])
+  useEffect(() => {
+    console.log("Response", PREVIEW_URL);
+    //API call
+    axios.get(PREVIEW_URL)
+      .then(response => {
+        setProjects(response.data)
+        console.log("Response", response.data)
+      })
+      .catch()
+  },[])
+  
   return (
     <section className="project" id="projects">
       <Container>
@@ -61,7 +39,10 @@ export const Projects = () => {
                             return (
                               <ProjectCard
                                 key={index}
-                                {...project}
+                                id={project.courseId}
+                                title={project.courseName}
+                                description={project.coursePreviewText}
+                                imgUrl={project.previewImage}
                                 />
                             )
                           })
