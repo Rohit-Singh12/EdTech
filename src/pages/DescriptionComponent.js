@@ -12,12 +12,12 @@ import RegisterCard from "../components/RegisterCard";
 import DescriptionCard from '../components/DescriptionCard';
 
 const DescriptionComponent = () => {
-  const [title, setTitle] = useState("Machine Learning")
+  const [title, setTitle] = useState("Machine Learning");
   const [courseDescription, setCourseDescription] = useState("This free course on Data Structures & Algorithms in Java taught by industry excerpts helps you learn the basic concepts such as Complexity, Recursion, and the Tower of Hanoi. Best for Beginners. Start now!");
-  const [courseOutline, setCourseOutline] = useState([])
-  const [instructorInfoList, setInstructorInfoList] = useState([])
+  const [courseOutline, setCourseOutline] = useState([]);
+  const [instructorInfoList, setInstructorInfoList] = useState([]);
 
-  const [course, setCourse] = useState([])
+  const [course, setCourse] = useState([]);
 
   useEffect(()=>{
     setCourse([
